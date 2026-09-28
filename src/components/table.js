@@ -3,6 +3,7 @@ class Table extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({ mode: 'open' })
+    this.labels = JSON.parse(this.getAttribute('labels'))
   }
 
   connectedCallback() {
@@ -12,6 +13,78 @@ class Table extends HTMLElement {
 
   loadData() {
     this.data = [
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
+      {
+        nombre: "Aarón Cedeno",
+        email: "aaroncedeno123@gmail.com",
+        fechaCreacion: "23/09/2026",
+        fechaActualizacion: "23/09/2026"
+      },
       {
         nombre: "Aarón Cedeno",
         email: "aaroncedeno123@gmail.com",
@@ -31,7 +104,6 @@ class Table extends HTMLElement {
         }
 
         .table {
-          width: 130%;
           padding: 0;
           display: flex;
           flex-direction: column;
@@ -71,6 +143,16 @@ class Table extends HTMLElement {
           align-items: center;
           justify-content: center;
         }
+
+        .table-body{
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          max-height: 80vh;
+          overflow: auto;
+          padding: 0 0.5rem;
+        }
+
 
         ul {
           margin: 0;
@@ -122,24 +204,26 @@ class Table extends HTMLElement {
           <button>&gt;</button>
         </div>
 
-        <ul>
-        </ul>
+        <div class="table-body">
+        </div>
       </div>
       `
 
 
-    const ul = this.shadow.querySelector('ul')
-
-
+    const tableBody = this.shadow.querySelector('.table-body')
 
     this.data.forEach(element => {
+
+      const dataElement = document.createElement('div')
+      dataElement.classList.add('data-element')
+      tableBody.appendChild(dataElement)
+
+      const ul = document.createElement('ul')
+      dataElement.appendChild(ul)
+
+      Object.entries(element).forEach
       const li = document.createElement('li')
-      li.innerHTML = `
-        <strong>Nombre:</strong> ${element.nombre}<br>
-        <strong>Email:</strong> ${element.email}<br>
-        <strong>Fecha de creacion:</strong> ${element.fechaCreacion}<br>
-        <strong>Fecha de actualizacion:</strong> ${element.fechaActualizacion}
-      `;
+
       ul.appendChild(li);
     });
   }

@@ -14,9 +14,9 @@ class Main extends HTMLElement {
       /*html*/`
     <style>
       main {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 2fr 6fr;
         padding: 1.5rem 4rem;
         max-height: 92vh;
       }

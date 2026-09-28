@@ -3,6 +3,7 @@ class Logo extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({ mode: 'open' })
+    this.title = this.getAttribute('title')
   }
 
   connectedCallback() {
@@ -25,7 +26,7 @@ class Logo extends HTMLElement {
       </style>
 
       <div class="logo">
-        <h1>lolito.ai - usuarios</h1>
+        <h1>${this.title}</h1>
       </div>
       `
   }

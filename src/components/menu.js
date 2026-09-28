@@ -7,7 +7,6 @@ class Menu extends HTMLElement {
 
   connectedCallback() {
     this.render()
-    this.eventos()
   }
 
   render() {
@@ -75,8 +74,7 @@ class Menu extends HTMLElement {
         </div>
       </div>
       `
-  }
-  eventos() {
+
     const boton = this.shadow.querySelector('.boton-menu')
     const desplegable = this.shadow.querySelector('.desplegable')
 
