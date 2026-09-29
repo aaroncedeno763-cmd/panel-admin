@@ -74,7 +74,7 @@ class Form extends HTMLElement {
     </style>
 
    <form class="login-form">
-    <h1></h1>
+    <h1>${this.getAttribute('titulo')}</h1>
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" id="email">
@@ -88,11 +88,6 @@ class Form extends HTMLElement {
     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
   </form>
     `
-
-    const h1 = this.shadow.querySelector('h1')
-    this.data.forEach(chat => {
-      h1.textContent = chat.titulo
-    })
 
     const submitButton = this.shadow.querySelector('.submit-button')
     submitButton.addEventListener('click', () => {
