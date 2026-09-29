@@ -221,10 +221,10 @@ class Table extends HTMLElement {
       const ul = document.createElement('ul')
       dataElement.appendChild(ul)
 
-      Object.entries(element).forEach
-      const li = document.createElement('li')
-
-      ul.appendChild(li);
+      Object.entries(element).forEach(([clave, valor]) => {
+        const li = document.createElement('li')
+        ul.appendChild(li)
+      })
     });
   }
 }
