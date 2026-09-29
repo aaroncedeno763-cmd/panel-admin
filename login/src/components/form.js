@@ -6,16 +6,7 @@ class Form extends HTMLElement {
   }
 
   connectedCallback() {
-    this.loadData()
     this.render()
-  }
-
-  loadData() {
-    this.data = [
-      {
-        titulo: "Iniciar Sesión",
-      }
-    ];
   }
 
   render() {
@@ -43,21 +34,26 @@ class Form extends HTMLElement {
      .form-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 0.25rem;
      }
      
+     .form-group input{
+      height: 1.5rem;
+     }
+
      .submit-button {
       background-color: hsla(197, 59%, 61%, 1.00);
       color: white;
-      padding: 14px 20px;
+      padding: 0.5rem 1rem;
       border: none;
-      border-radius: 4px;
+      border-radius: 0.5rem;
       cursor: pointer;
+      height: 2rem;
      }
 
      .submit-button:hover {
       background-color: hsla(197, 59%, 61%, 1.00);
-      transform: translateY(-5px);
+      transform: translateY(-0.25rem);
       transition: all 0.2s ease;
      }
 
